@@ -70,7 +70,7 @@ MIT License - See LICENSE for details.
 
 ```bibtex
 @software{upe78_2026,
-  author = {Joshoshfield},
+  author = {Taylor Christian Mattheisen},
   title = {UPE-78: Universal Processing Engine 78},
   year = {2026},
   url = {https://github.com/joshoshfield-a11y/UPE-78}
