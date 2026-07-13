@@ -7,7 +7,7 @@
 
 ## Overview
 
-UPE-78 is a high-performance multi-agent acceleration framework designed for advanced AI control, symbolic computation, and non-classical physics modeling. It provides 177+ production-ready formulas across 33 categories including neural architecture search, quantum stochastic processes, and symbolic registry operations.
+UPE-78 is a high-performance multi-agent acceleration framework designed for advanced AI control, symbolic computation, and non-classical physics modeling. It provides 177+ production-ready formulas across 33 categories including neural architecture search, quantum stochastic processes, symbolic registry operations, and formal theological/logical systems.
 
 ## Architecture
 
@@ -19,7 +19,8 @@ UPE-78/
 ├── Stochastic Engine    # Probabilistic process modeling
 ├── AI Control           # Agent orchestration & control theory
 ├── Symbolic Registry    # 162-operator symbolic computation
-└── Discovery Engine     # Falsification & hypothesis validation
+├── Theology             # Formal theological coherence framework
+└── Logic                # Propositional, modal, fuzzy logic & theorem proving
 ```
 
 ## Installation
@@ -54,17 +55,22 @@ swarm.orchestrate(target="discovery")
 7. Thermodynamic Efficiency Models
 8. Cavity Resonance Mathematics
 9. Discovery Engine Falsification
-10. And 24 more...
+10. Theological Coherence Analysis
+11. Formal Logic Systems
+12. Modal Logic & Kripke Semantics
+13. Automated Theorem Proving
+14. And 20 more...
 
 ## Documentation
 
-- [LaTeX Manuscript](docs/manuscript.tex) - Full academic treatment with theorems and proofs
 - [API Reference](docs/api.md) - Complete module documentation
 - [Examples](examples/) - Usage demonstrations
 
 ## License
 
-MIT License - See LICENSE for details.
+**Proprietary Commercial License** — All rights reserved by Taylor Christian Mattheisen.
+Unauthorized use, reproduction, or distribution is strictly prohibited.
+Commercial licenses available exclusively through the copyright holder.
 
 ## Citation
 
