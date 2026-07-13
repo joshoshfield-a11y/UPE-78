@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 import hashlib
 import json
+from collections import defaultdict
 
 
 class AccessLevel(Enum):
@@ -16,6 +17,9 @@ class AccessLevel(Enum):
     READ = 0b001
     WRITE = 0b010
     EXECUTE = 0b100
+    READ_WRITE = 0b011
+    READ_EXECUTE = 0b101
+    WRITE_EXECUTE = 0b110
     FULL = 0b111
 
 
@@ -62,6 +66,11 @@ class SymbolicRegistry:
         "sync": ["LOCK", "UNLOCK", "BARRIER", "SEMAPHORE", "MUTEX", "RW_LOCK", "SPIN_LOCK"],
         "transform": ["FFT", "DWT", "DCT", "WAVELET", "HILBERT", "RADON", "HOUGH"],
         "geometry": ["ROTATE", "TRANSLATE", "SCALE", "SHEAR", "REFLECT", "PROJECT_3D", "UNPROJECT"],
+        "algebra": ["SOLVE_LINEAR", "SOLVE_POLY", "EIGEN_DECOMP", "JORDAN_FORM", "SMITH_NORMAL", "HERMITE"],
+        "analysis": ["INTEGRATE", "DIFFERENTIATE", "LIMIT", "SERIES", "RESIDUE", "CONVOLUTION"],
+        "number_theory": ["PRIME_TEST", "FACTOR", "GCD", "LCM", "MODULAR_INV", "CHINESE_REMAINDER"],
+        "graph": ["BFS", "DFS", "DIJKSTRA", "BELLMAN_FORD", "FLOYD_WARSHALL", "TOPO_SORT", "MST"],
+        "probability": ["PDF", "CDF", "INVERSE_CDF", "MOMENT"],
     }
 
     def __init__(self, dimensions: int = 936):
@@ -83,7 +92,7 @@ class SymbolicRegistry:
                 if category in ["crypto", "control", "agent"]:
                     access = AccessLevel.FULL
                 elif category in ["io", "sync"]:
-                    access = AccessLevel(0b110)  # WRITE | EXECUTE
+                    access = AccessLevel.WRITE_EXECUTE
                 else:
                     access = AccessLevel.FULL
 
@@ -132,7 +141,7 @@ class SymbolicRegistry:
                 self._topology[i, j] = coupling
 
         # Normalize
-        self._topology = self._topology / np.linalg.norm(self._topology, axis=1, keepdims=True)
+        self._topology = self._topology / (np.linalg.norm(self._topology, axis=1, keepdims=True) + 1e-10)
 
     def get_operator(self, name_or_id) -> Optional[SymbolicOperator]:
         """Retrieve operator by name or ID"""
@@ -350,4 +359,4 @@ class LensTopology:
 
     def reconstruct(self, coefficients: np.ndarray) -> np.ndarray:
         """Reconstruct vector from coefficients"""
-        return np.dot(coefficients, self._basis[:len(coefficients)])
+        return np.dot(coefficient
