@@ -77,7 +77,7 @@ class UPE78Engine:
                 transform[i, j] = coupling
 
         # Normalize
-        transform = transform / np.linalg.norm(transform, axis=1, keepdims=True)
+        transform = transform / (np.linalg.norm(transform, axis=1, keepdims=True) + 1e-10)
         return transform
 
     def _build_dodecahedral_transform(self) -> np.ndarray:
@@ -98,7 +98,7 @@ class UPE78Engine:
                     coupling = np.exp(-abs(i - j) / phi) * np.cos(2 * np.pi * (i - j) / phi)
                     transform[i, j] = coupling
 
-        return transform / np.linalg.norm(transform, axis=1, keepdims=True)
+        return transform / (np.linalg.norm(transform, axis=1, keepdims=True) + 1e-10)
 
     def accelerate(self, tensor: np.ndarray, operation: str = "transform") -> np.ndarray:
         """
