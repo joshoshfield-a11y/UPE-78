@@ -30,6 +30,7 @@ class TheologicalProposition:
     contradictions: List[str] = field(default_factory=list)
     evidence_score: float = 0.5    # 0.0 = falsified, 1.0 = confirmed
     formalization: str = ""        # Logical formalization
+    metadata: Dict[str, Any] = field(default_factory=dict)
 
     def __hash__(self):
         return hash(self.id)
