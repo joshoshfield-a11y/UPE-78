@@ -1,27 +1,47 @@
-# UPE-78: Universal Processing Engine 78
+# UPE-78: Universal Processing Engine 78 v12.0
 
-**Multi-Agent Acceleration Architecture with Non-Classical Physics Integration**
+**Multi-Agent Acceleration Architecture with Honest Self-Audit**
 
-[![Version](https://img.shields.io/badge/version-10.0-blue)](https://github.com/joshoshfield-a11y/UPE-78)
+[![Version](https://img.shields.io/badge/version-12.0--alpha-blue)](https://github.com/joshoshfield-a11y/UPE-78)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://python.org)
 
-## Overview
+## ⚠️ Honest Status
 
-UPE-78 is a high-performance multi-agent acceleration framework designed for advanced AI control, symbolic computation, and non-classical physics modeling. It provides 177+ production-ready formulas across 33 categories including neural architecture search, quantum stochastic processes, symbolic registry operations, and formal theological/logical systems.
+This is **development-stage software**. It is **not production-ready** and **not peer-review-ready**.
+
+v12.0 represents a strategic pivot from v10.0's "specification fiction" state to an honest, self-correcting framework. The acceleration architecture is designed and partially implemented. What remains is **measurement and external validation**.
 
 ## Architecture
 
 ```
-UPE-78/
-├── Core Engine          # Acceleration primitives & tensor ops
-├── Neural Layer         # Dynamic neural architecture components
-├── Quantum Layer        # Quantum-classical hybrid computation
-├── Stochastic Engine    # Probabilistic process modeling
-├── AI Control           # Agent orchestration & control theory
-├── Symbolic Registry    # 162-operator symbolic computation
-├── Theology             # Formal theological coherence framework
-└── Logic                # Propositional, modal, fuzzy logic & theorem proving
+UPE-78 v12.0 Operational Stack
+├── LAYER 1: OCIE (109 operators, 55% unverified, manually constructed)
+├── LAYER 2: SEA (local torch embedding, ~11K QPS measured, 60% recall on 15 standard pairs)
+├── LAYER 3: FVP (Z3 SMT + CODATA, sigma-deviation PRIMARY, Type E epistemological verification)
+├── LAYER 4: ECPE (Bayesian + Platt, ECE measured on synthetic data, not asserted)
+├── LAYER 5: CTD (Coherence Threshold Detector)
+├── LAYER 6: SAUD (Self-Audit — MANDATORY, runs before every peer audit)
+├── LAYER 7: Degradation Controller (6-level cascade)
+└── LEGACY: v10.0 core modules (preserved, not broken)
 ```
+
+## The Four Acceleration Mechanisms
+
+| Mechanism | Status | What It Does |
+|-----------|--------|--------------|
+| **OCIE** | Designed + Prototyped | Operator routing via 5 generators (E1-E5). 109 manually constructed operators. |
+| **SEA** | Designed + Prototyped | 3-tier semantic cascade (Jaccard → MiniLM → GTE). Local fallback available. |
+| **FVP** | Designed + Prototyped | Z3 SMT formal verification with Type E epistemological disease detection. |
+| **ECPE** | Designed + Prototyped | Real Platt scaling via sklearn. QED exclusion at 10^12 orders. |
+
+## What Changed in v12.0
+
+- `lambda_U = 0.434m` and `f_Omega = 27.2MHz` **DISCARDED** (inherited from falsified v10.1 claims)
+- `alpha_inv` fixed to full CODATA `137.035999084(21)`
+- 107/107 test claim **REMOVED** (was 55% filler, 0% external benchmarks)
+- "All Systems Operational" rhetoric **REMOVED**
+- Self-audit (SAUD) is now **mandatory** before any peer audit
+- Limitations statement auto-appended to every audit output
 
 ## Installation
 
@@ -29,56 +49,59 @@ UPE-78/
 git clone https://github.com/joshoshfield-a11y/UPE-78.git
 cd UPE-78
 pip install -e .
+pip install -e ".[z3,transformers]"  # optional heavy deps
 ```
 
 ## Quick Start
 
 ```python
-from upe78 import UPE78Engine, AgentSwarm
+from upe78 import UPE78Constants, UPE78_FVP, UPE78_SAUD
 
-# Initialize acceleration engine
-engine = UPE78Engine(dimensions=936, topology="lens")
+# Honest constant validation
+c = UPE78Constants()
+print(c.validate_alpha_inv(137.036))  # sigma-deviation check
 
-# Deploy multi-agent swarm
-swarm = AgentSwarm(n_agents=200, spatial_hashing=True)
-swarm.orchestrate(target="discovery")
+# Mandatory self-audit before peer work
+saud = UPE78_SAUD()
+report = saud.run()
+print(report["limitations"])
+
+# Audit a peer claim
+from upe78 import UPE78_AuditEngine
+engine = UPE78_AuditEngine()
+result = engine.audit_claim({
+    "text": "Water boils at 100°C",
+    "value": 100.0,
+    "name": "water_boiling_point",
+    "domain": "STANDARD"
+})
+print(result["verdict"])
 ```
 
-## Categories (33 Total)
+## Categories
 
-1. Tensor Acceleration Primitives
-2. Neural Architecture Dynamics
-3. Quantum Stochastic Processes
-4. Agent Orchestration Control
-5. Symbolic Registry Operations
-6. Non-Classical Field Theory
-7. Thermodynamic Efficiency Models
-8. Cavity Resonance Mathematics
-9. Discovery Engine Falsification
-10. Theological Coherence Analysis
-11. Formal Logic Systems
-12. Modal Logic & Kripke Semantics
-13. Automated Theorem Proving
-14. And 20 more...
+1. Tensor Acceleration Primitives (legacy)
+2. Neural Architecture Dynamics (legacy)
+3. Quantum Stochastic Processes (legacy)
+4. Agent Orchestration Control (legacy)
+5. Symbolic Registry Operations (legacy)
+6. **OCIE Operator Compression (v12.0)**
+7. **SEA Semantic Embedding (v12.0)**
+8. **FVP Formal Verification (v12.0)**
+9. **ECPE Confidence Calibration (v12.0)**
+10. **CTD Coherence Detection (v12.0)**
+11. **SAUD Self-Audit (v12.0)**
+12. Theological Coherence Analysis (legacy)
+13. Formal Logic & Theorem Proving (legacy)
 
-## Documentation
+## High Priority for v12.1
 
-- [API Reference](docs/api.md) - Complete module documentation
-- [Examples](examples/) - Usage demonstrations
+1. Implement actual 3-tier SEA cascade with ONNX-INT8 and benchmark on STS-B/SICK-R
+2. Obtain real claim-verification dataset (FEVER, SciFact) and measure actual ECE
+3. Implement rigorous A5 x Z2 group-theoretic derivation of OCIE or reduce claims
+4. Add independent benchmark tests using `astropy.constants` and `scipy.constants`
+5. Add blind falsification tests where the designer doesn't know the expected output
 
 ## License
 
-**Proprietary Commercial License** — All rights reserved by Taylor Christian Mattheisen.
-Unauthorized use, reproduction, or distribution is strictly prohibited.
-Commercial licenses available exclusively through the copyright holder.
-
-## Citation
-
-```bibtex
-@software{upe78_2026,
-  author = {Taylor Christian Mattheisen},
-  title = {UPE-78: Universal Processing Engine 78},
-  year = {2026},
-  url = {https://github.com/joshoshfield-a11y/UPE-78}
-}
-```
+Proprietary Commercial — Taylor Christian Mattheisen
